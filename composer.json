@@ -1,0 +1,23 @@
+{
+  "name": "ivoba-oxid/better-seo",
+  "description": "Better Seo module for OXID eShop 6.",
+  "type": "oxideshop-module",
+  "keywords": ["oxid", "modules", "eShop" "Seo"],
+  "homepage": "https://github.com/ivoba-oxid/better-seo",
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "oxid-esales/oxideshop-ce": "^v6.0"
+  },
+  "extra": {
+    "oxideshop": {
+      "target-directory": "ivoba/better-seo"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "IvobaOxid\\BetterSeo\\": "../../../source/modules/ivoba/better-seo"
+    }
+  }
+}
