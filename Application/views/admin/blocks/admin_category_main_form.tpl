@@ -1,3 +1,5 @@
+[{assign var="oConf" value=$oViewConf->getConfig()}]
+[{if $oConf->getConfigParam('ivoba_better_seo_CategoryEnableSeoTitle') }]
 <tr>
   <td class="edittext">
     [{ oxmultilang ident="IVOBA_BETTER_SEO_TITLE" }]&nbsp;
@@ -7,4 +9,5 @@
     [{ oxinputhelp ident="IVOBA_BETTER_SEO_TITLE_HELP" }]
   </td>
 </tr>
+[{/if}]
 [{$smarty.block.parent}]

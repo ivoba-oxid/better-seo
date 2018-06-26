@@ -1,7 +1,7 @@
 <?php
 /* Please retain this copyright header in all versions of the software
  *
- * Copyright (C) 2017 Ivo Bathke
+ * Copyright (C) 2018 Ivo Bathke
  *
  * It is published under the MIT Open Source License.
  *
@@ -20,32 +20,17 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-
-namespace IvobaOxid\BetterSeo\Application\Controller;
-
-use OxidEsales\Eshop\Application\Controller\ArticleListController as BaseArticleListController;
-use OxidEsales\EshopCommunity\Core\Registry;
-
-class ArticleListController extends BaseArticleListController
-{
-
-    use SeoTitleFromDbTrait;
-
-    public function getPageTitle()
-    {
-        $config = Registry::getConfig();
-        if ($oCategory = $this->getActCategory()) {
-            if ($config->getConfigParam('ivoba_better_seo_CategoryEnableSeoTitle')) {
-                $sSeoTitle = $oCategory->oxcategories__ivoba_seotitle->value;
-                if (empty($sSeoTitle)) {
-                    $sSeoTitle = $this->_getSeoTitleFromDb($oCategory->oxcategories__oxid->value, 'oxcategories');
-                }
-                if (!empty($sSeoTitle)) {
-                    return $sSeoTitle;
-                }
-            }
-        }
-
-        return parent::getPageTitle();
-    }
-}
+$aLang = [
+    'charset'                                                     => 'UTF-8',
+    'SHOP_MODULE_GROUP_ivoba_better_seo_article'                  => 'Artikel',
+    'SHOP_MODULE_GROUP_ivoba_better_seo_category'                 => 'Kategorie',
+    'SHOP_MODULE_GROUP_ivoba_better_seo_manufacturer'             => 'Hersteller',
+    'SHOP_MODULE_GROUP_ivoba_better_seo_content'                  => 'CMS',
+    'SHOP_MODULE_ivoba_better_seo_ArticleEnableSeoTitle'          => 'SEO Title anschalten',
+    'SHOP_MODULE_ivoba_better_seo_CategoryEnableSeoTitle'         => 'SEO Title anschalten',
+    'SHOP_MODULE_ivoba_better_seo_ManufacturerEnableSeoTitle'     => 'SEO Title anschalten',
+    'SHOP_MODULE_ivoba_better_seo_ContentEnableSeoTitle'          => 'SEO Title anschalten',
+    'SHOP_MODULE_ivoba_better_seo_EnableBetterMetaDescription'    => '"Better Meta Description" anschalten',
+    'SHOP_MODULE_ivoba_better_seo_BetterTitleStructure'           => '"Better Title" Struktur',
+    'SHOP_MODULE_ivoba_better_seo_BetterMetaDescriptionStructure' => '"Better Meta Description" Struktur',
+];

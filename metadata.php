@@ -32,42 +32,82 @@ $aModule          = [
     'email'       => 'ivo.bathke@gmail.com',
     'url'         => 'https://oxid.ivo-bathke.name#better-seo',
     'extend'      => [
-      \OxidEsales\Eshop\Core\ViewConfig::class => \IvobaOxid\JsonLd\Core\ViewConfig::class
+        OxidEsales\Eshop\Application\Controller\ArticleListController::class      => IvobaOxid\BetterSeo\Application\Controller\ArticleListController::class,
+        OxidEsales\Eshop\Application\Controller\ContentController::class          => IvobaOxid\BetterSeo\Application\Controller\ContentController::class,
+        OxidEsales\Eshop\Application\Controller\ArticleDetailsController::class   => IvobaOxid\BetterSeo\Application\Controller\ArticleDetailsController::class,
+        OxidEsales\Eshop\Application\Controller\ManufacturerListController::class => IvobaOxid\BetterSeo\Application\Controller\ManufacturerListController::class,
     ],
     'blocks'      => [
-        ['template' => 'article_main.tpl', 'block'=>'admin_article_main_form', 'file'=>'/Application/views/admin/blocks/admin_article_main_form.tpl'],
-        ['template' => 'category_main.tpl', 'block'=>'admin_category_main_form', 'file'=>'/Application/views/admin/blocks/admin_category_main_form.tpl'],
-        ['template' => 'content_main.tpl', 'block'=>'admin_content_main_form', 'file'=>'/Application/views/admin/blocks/admin_content_main_form.tpl'],
-        ['template' => 'vendor_main.tpl', 'block'=>'admin_vendor_main_form', 'file'=>'/Application/views/admin/blocks/admin_vendor_main_form.tpl'],
-        ['template' => 'manufacturer_main.tpl', 'block'=>'admin_manufacturer_main_form', 'file'=>'/Application/views/admin/blocks/admin_manufacturer_main_form.tpl'],
+        [
+            'template' => 'article_main.tpl',
+            'block'    => 'admin_article_main_form',
+            'file'     => '/Application/views/admin/blocks/admin_article_main_form.tpl',
+        ],
+        [
+            'template' => 'include/category_main_form.tpl',
+            'block'    => 'admin_category_main_form',
+            'file'     => '/Application/views/admin/blocks/admin_category_main_form.tpl',
+        ],
+        [
+            'template' => 'content_main.tpl',
+            'block'    => 'admin_content_main_form',
+            'file'     => '/Application/views/admin/blocks/admin_content_main_form.tpl',
+        ],
+        [
+            'template' => 'manufacturer_main.tpl',
+            'block'    => 'admin_manufacturer_main_form',
+            'file'     => '/Application/views/admin/blocks/admin_manufacturer_main_form.tpl',
+        ],
     ],
     'settings'    => [
         [
             'group' => 'ivoba_better_seo_article',
-            'name'  => 'ivoba_better_seo_EnableSeoTitle', //this will show SeoFields in Admin and if filled will use as title
+            'name'  => 'ivoba_better_seo_ArticleEnableSeoTitle',
+            //this will show SeoFields in Admin and if filled will use as title
+            'type'  => 'bool',
+            'value' => true,
+        ],
+        [
+            'group' => 'ivoba_better_seo_category',
+            'name'  => 'ivoba_better_seo_CategoryEnableSeoTitle',
+            //this will show SeoFields in Admin and if filled will use as title
+            'type'  => 'bool',
+            'value' => true,
+        ],
+        [
+            'group' => 'ivoba_better_seo_manufacturer',
+            'name'  => 'ivoba_better_seo_ManufacturerEnableSeoTitle',
+            //this will show SeoFields in Admin and if filled will use as title
+            'type'  => 'bool',
+            'value' => true,
+        ],
+        [
+            'group' => 'ivoba_better_seo_content',
+            'name'  => 'ivoba_better_seo_ContentEnableSeoTitle',
+            //this will show SeoFields in Admin and if filled will use as title
             'type'  => 'bool',
             'value' => true,
         ],
         [
             'group' => 'ivoba_better_seo_article',
-            'name'  => 'ivoba_better_seo_EnableMetaDescription',
+            'name'  => 'ivoba_better_seo_EnableBetterMetaDescription',
             'type'  => 'bool',
             'value' => true,
         ],
         [
             'group' => 'ivoba_better_seo_article',
-            'name'  => 'ivoba_better_seo_TitleStructure',
+            'name'  => 'ivoba_better_seo_BetterTitleStructure',
             'type'  => 'str',
-            'value' => '%Prefix %ArtikelName %ArtikelVariante %in %Category %TitleSuffix %PageSuffix',
+            'value' => '%Prefix %ArticleName %in %Category %TitleSuffix %PageSuffix',
         ],
         [
             'group' => 'ivoba_better_seo_article',
-            'name'  => 'ivoba_better_seo_MetaDescriptionStructure',
+            'name'  => 'ivoba_better_seo_BetterMetaDescriptionStructure',
             'type'  => 'str',
-            'value' => '%ArtikelName %ArtikelVariante %in %Category %LongDesc', //article1 - variante in category - longdesc
-        ]
+            'value' => '%ArticleName %in %Category - %MetaDescription',
+        ],
     ],
     'events'      => [
-        'onActivate'   => 'OxpsPaymorrowModule::onActivate',
+        'onActivate' => 'OxpsPaymorrowModule::onActivate',
     ],
 ];
