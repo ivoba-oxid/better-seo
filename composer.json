@@ -2,7 +2,7 @@
   "name": "ivoba-oxid/better-seo",
   "description": "Better Seo module for OXID eShop 6.",
   "type": "oxideshop-module",
-  "keywords": ["oxid", "modules", "eShop" "Seo"],
+  "keywords": ["oxid", "modules", "eShop", "Seo"],
   "homepage": "https://github.com/ivoba-oxid/better-seo",
   "license": [
     "MIT"
