@@ -9,32 +9,14 @@ In addition you can add a custom title in the article, category, manufacturer or
 When this custom SEO title field is enabled and filled it will be used instead od the default title.
 %Prefix %ArticleName %in %Category %TitleSuffix %PageSuffix
 
-
-WIP!
-
 ## Installation
-- composer install
+- via composer:
+
+    composer require ivoba-oxid/better-seo
+
 - post install script run migration?
 - run migration
 - regenerate views
-
-## ArtikelDetail:
-- enter/add SeoTitle in backend
-- option für add category name to title:
-- "Prefix Artikel1 variante in Kategorie1 TitleSuffix PageSuffix"
-- Meta description: article1 - variante in category - longdesc
-
-## Liste
-- enter/add SeoTitle in backend
-- Prefix - Title - - Category - Suffix - PageSuffix
-- set delimiter as option
-
-## Manufacturer
-- enter/add SeoTitle in backend
-- shortDesc - sufix
-
-## Content
-- enter/add SeoTitle in backend
 
 ## Todo
 - add admin fields / blocks
@@ -42,9 +24,7 @@ WIP!
 - $oProduct->oxarticles__oxtitle->value . ' in ' . $this->GetCatTitle() . ' - ' . $sMeta;
   sprintf and language
 
-rename ASY_SEOTITLE db fields and migrate values
-
 ## Credits
 Inspired by:
 - https://github.com/OXIDprojects/seoplus
--
+- https://github.com/Alpha-Sys/asy_seotitle
