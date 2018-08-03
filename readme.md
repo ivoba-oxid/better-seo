@@ -24,6 +24,7 @@ When this custom SEO title field is enabled and filled it will be used instead o
     vendor/bin/oe-eshop-db_migrate migrations:migrate
 
 - regenerate views
+- clear cache
 
 ## Credits
 Inspired by:
