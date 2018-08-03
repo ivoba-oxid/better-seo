@@ -14,15 +14,16 @@ When this custom SEO title field is enabled and filled it will be used instead o
 
     composer require ivoba-oxid/better-seo
 
-- post install script run migration?
-- run migration
-- regenerate views
+- create migration in your shop
 
-## Todo
-- add admin fields / blocks
-- migration
-- $oProduct->oxarticles__oxtitle->value . ' in ' . $this->GetCatTitle() . ' - ' . $sMeta;
-  sprintf and language
+    vendor/bin/oe-eshop-db_migrate migrations:generate PR
+
+- copy up & down methods to the new migration
+- run migrations
+
+    vendor/bin/oe-eshop-db_migrate migrations:migrate
+
+- regenerate views
 
 ## Credits
 Inspired by:
