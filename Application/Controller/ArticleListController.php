@@ -1,7 +1,7 @@
 <?php
 /* Please retain this copyright header in all versions of the software
  *
- * Copyright (C) 2017 Ivo Bathke
+ * Copyright (C) 2018 Ivo Bathke
  *
  * It is published under the MIT Open Source License.
  *
