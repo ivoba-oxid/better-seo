@@ -21,7 +21,7 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-$sMetadataVersion = '2';
+$sMetadataVersion = '2.1';
 $aModule          = [
     'id'          => 'ivoba_better_seo',
     'title'       => '<strong>Ivo Bathke</strong>:  <i>Better Seo</i>',
