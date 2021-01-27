@@ -107,7 +107,5 @@ $aModule          = [
             'value' => '%ArticleName %in %Category - %MetaDescription',
         ],
     ],
-    'events'      => [
-        'onActivate' => 'OxpsPaymorrowModule::onActivate',
-    ],
+    'events'      => [],
 ];
